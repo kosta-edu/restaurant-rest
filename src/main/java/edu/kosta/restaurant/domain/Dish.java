@@ -15,7 +15,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "dish")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

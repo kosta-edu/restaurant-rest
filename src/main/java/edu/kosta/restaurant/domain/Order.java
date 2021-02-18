@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -33,14 +33,16 @@ public class Order {
     @JoinColumn(name = "tablet_id", nullable = false, foreignKey = @ForeignKey(name="FK_TABLET_TB_ORDER"))
     private Tablet tablets;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "order_datetime", nullable = false)
-    private LocalDateTime orderDatetime;
+    private Date orderDatetime;
 
     @Column(name = "state", nullable = false)
     @Enumerated(EnumType.STRING)
     private State state; // 주문 상태
 
-    @OneToMany(mappedBy = "orders")
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.REMOVE)
     private List<OrderDishes> orderDishes;
 
     public enum State {
