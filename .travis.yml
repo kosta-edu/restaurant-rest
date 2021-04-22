@@ -19,7 +19,7 @@ script:
 before_deploy:
   - mkdir -p deploy
   - cp build/libs/*.jar deploy/application.jar
-  - cp Procfile deploy/Procfile
+  #- cp Procfile deploy/Procfile
   - cp -r ./.platform deploy/.platform
   - cd deploy && zip -r deploy.zip .
 
