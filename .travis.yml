@@ -4,7 +4,7 @@ jdk:
 
 branches:
   only:
-    - ci
+    - master
 
 # Travis CI 서버의 Home
 cache:
@@ -21,7 +21,6 @@ before_deploy:
   - mkdir -p deploy
   - cp build/libs/*.jar deploy/application.jar
   - cp Procfile deploy/Procfile
-#  - cp -r ./.ebextensions deploy/.ebextensions
   - cd deploy && zip -r deploy.zip .
 
 deploy:
@@ -35,7 +34,4 @@ deploy:
   env: "Restaurant-java8"
   bucket_name: "elasticbeanstalk-ap-northeast-2-893382876075"  # S3 bucket name
   on:
-    branch: ci
-
-after_deploy:
-  - echo "Elastic Beanstalk 배포 진행중입니다."
+    branch: master
