@@ -25,7 +25,7 @@ before_deploy:
 
 deploy:
   provider: elasticbeanstalk
-  zip_file: archive.zip # before_deploy에서 이미 archive로 이동한 상태(cd archive)라 현재 위치에서 archive.zip 전송
+  zip_file: deploy.zip
   skip_cleanup: true
   access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
   secret_access_key: $AWS_SECRET_KEY
