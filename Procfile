@@ -1,1 +1,1 @@
-web: java -Dfile.encoding=UTF-8 -jar application.jar
+web: java -Dserver.port=$PORT -Dfile.encoding=UTF-8 -jar application.jar
