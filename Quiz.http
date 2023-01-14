@@ -1,0 +1,15 @@
+### GET request with a header
+GET http://localhost:8080/quizzes
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/quizzes/search?category=1
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/quizzes/1/children
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/categories
+Accept: application/json

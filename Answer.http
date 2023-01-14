@@ -1,0 +1,35 @@
+### Send POST request with json body
+POST http://localhost:8080/answers
+Content-Type: application/json
+
+[
+{
+  "answer": "yes",
+  "quizId": 1,
+  "userId": 1
+},
+  {
+    "answer": "no",
+    "quizId": 2,
+    "userId": 1
+  },
+  {
+    "answer": "yes",
+    "quizId": 3,
+    "userId": 1
+  },
+  {
+    "answer": "yes",
+    "quizId": 4,
+    "userId": 1
+  },
+  {
+    "answer": "yes",
+    "quizId": 5,
+    "userId": 1
+  }
+]
+
+### Send POST request with json body
+GET http://localhost:8080/answers/cal
+Content-Type: application/json
